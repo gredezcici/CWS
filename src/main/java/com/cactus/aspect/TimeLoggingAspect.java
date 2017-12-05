@@ -26,15 +26,11 @@ public class TimeLoggingAspect {
 
 //	@Around("execution(* com.cactus.controller.*.*(..))")
 	public Object elaspedTimeAdvice(ProceedingJoinPoint joinPoint) throws CactusException {
-		logger.debug("aspect running");
-		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
-				.getRequest();
-		String ipaddress = request.getRemoteAddr();
+		logger.debug("aspect running");	
 		Object value = null;
 		Object[] args = joinPoint.getArgs();
 		MethodSignature methodSignature = (MethodSignature) joinPoint.getStaticPart().getSignature();
 		Method method = methodSignature.getMethod();
-		String name = method.getName();
 		Annotation[][] parameterAnnotations = method.getParameterAnnotations();
 		assert args.length == parameterAnnotations.length;
 		for (int argIndex = 0; argIndex < args.length; argIndex++) {
