@@ -42,7 +42,6 @@ public class TimeLoggingAspect {
 					continue;
 				logger.debug("  " + requestParam.value() + " = " + args[argIndex]);
 			}
-			
 		}
 		try {
 			value = joinPoint.proceed();
