@@ -4,7 +4,7 @@ public class User {
 	private String id;
 	private String fullname;
 	private String email;
-	private String wechatAccount;
+	private String wechat_account;
 	private String address;
 	private int age;
 	private String birthDay;
@@ -43,11 +43,11 @@ public class User {
 	}
 
 	public String getWechatAccount() {
-		return wechatAccount;
+		return wechat_account;
 	}
 
 	public void setWechatAccount(String wechatAccount) {
-		this.wechatAccount = wechatAccount;
+		this.wechat_account = wechatAccount;
 	}
 
 	public String getAddress() {
