@@ -1,13 +1,16 @@
 package com.cactus.entities;
 
+import java.util.Date;
+
 public class User {
 	private String id;
 	private String fullname;
+	private int phone;
 	private String email;
 	private String wechat_account;
 	private String address;
 	private int age;
-	private String birthDay;
+	private Date birthDay;
 	private String group;
 
 	public String getGroup() {
@@ -32,6 +35,14 @@ public class User {
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
+	}
+
+	public int getPhone() {
+		return phone;
+	}
+
+	public void setPhone(int phone) {
+		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -66,11 +77,11 @@ public class User {
 		this.age = age;
 	}
 
-	public String getBirthDay() {
+	public Date getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(String birthDay) {
+	public void setBirthDay(Date birthDay) {
 		this.birthDay = birthDay;
 	}
 }

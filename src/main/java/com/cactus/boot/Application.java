@@ -2,6 +2,7 @@ package com.cactus.boot;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.cactus" })
+@MapperScan("com.cactus.domain")
 public class Application implements ApplicationRunner {
 	private static final Logger logger = LogManager.getLogger(Application.class);
 
