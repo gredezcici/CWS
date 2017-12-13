@@ -4,13 +4,48 @@ import java.util.Date;
 
 public class User {
 	private String id;
-	private String fullname;
+	private String lastname;
+	private String firstname;
+	private String loginname;
 	private int phone;
 	private String email;
 	private String wechat_account;
 	private String address;
 	private int age;
 	private Date birthDay;
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLoginname() {
+		return loginname;
+	}
+
+	public void setLoginname(String loginname) {
+		this.loginname = loginname;
+	}
+
+	public String getWechat_account() {
+		return wechat_account;
+	}
+
+	public void setWechat_account(String wechat_account) {
+		this.wechat_account = wechat_account;
+	}
+
 	private String group;
 
 	public String getGroup() {
@@ -27,14 +62,6 @@ public class User {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getFullname() {
-		return fullname;
-	}
-
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
 	}
 
 	public int getPhone() {
