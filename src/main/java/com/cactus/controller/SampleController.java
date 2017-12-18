@@ -22,10 +22,10 @@ public class SampleController {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@RequestMapping("/greeting")
+	@RequestMapping("/greetings")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		logger.info("Greeting");
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
-
+	
 }
