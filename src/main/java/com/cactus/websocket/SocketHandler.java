@@ -22,7 +22,9 @@ public class SocketHandler extends TextWebSocketHandler {
 	List<WebSocketSession> sessions = new CopyOnWriteArrayList<WebSocketSession>();
 
 	@Override
-	public void afterConnectionEstablished(WebSocketSession session) {
+	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+		TextMessage message = new TextMessage("hello");
+		session.sendMessage(message);
 		sessions.add(session);
 	}
 
