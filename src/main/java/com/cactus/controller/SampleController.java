@@ -4,21 +4,26 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cactus.entities.Greeting;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class SampleController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 	private static final Logger logger = LogManager.getLogger(SampleController.class);
+	@Autowired
+	private ObjectMapper objectMapper;
+	
 	@RequestMapping("/hello/{name}")
 	public Greeting home(@PathVariable String name) {
-		logger.info("hello");
+		logger.info("hello "+ objectMapper);
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
