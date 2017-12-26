@@ -31,6 +31,7 @@ public class SocketHandler extends TextWebSocketHandler {
 	@Override
 	public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		for (WebSocketSession webSocketSession : sessions) {
+			logger.debug("message: " + message);
 			Map value = objectMapper.readValue(message.getPayload(), Map.class);
 			logger.debug("session message:" + objectMapper.writeValueAsString(value));
 			webSocketSession.sendMessage(new TextMessage("Hello " + value.get("name") + " !"));

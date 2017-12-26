@@ -125,7 +125,7 @@ button:hover {
 		var closeBtn = document.getElementById('close');
 
 		// Create a new WebSocket.
-		var socket = new WebSocket('wss://echo.websocket.org');
+		var socket = new WebSocket('ws://' + window.location.host + '/name');
 
 		// Handle any errors that occur.
 		socket.onerror = function(error) {
